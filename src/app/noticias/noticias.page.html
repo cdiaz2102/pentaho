@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Noticias de Colombia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!-- <ion-slide ng-repeat="image in images"> -->
+<ion-card *ngFor = "let noticia of articulos">
+  <div class="imagen" *ngIf="noticia.urlToImage"> <img src="{{noticia.urlToImage}}" /> </div>
+  <ion-card-content>
+    <ion-card-title padding-bottom>
+      {{noticia.title}}
+    </ion-card-title>
+    <p>
+      {{noticia.content}}
+    </p>
+  </ion-card-content>
+  <ion-row no-padding>
+    <ion-col>
+      <button ion-button clear small color="danger" icon-start>
+        <ion-icon name='star'></ion-icon>
+        Favorite
+      </button>
+    </ion-col>
+    <ion-col text-right>
+      <button ion-button clear small color="danger" icon-start>
+        <ion-icon name='share-alt'></ion-icon>
+        Share
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-card>
+
+</ion-content>
