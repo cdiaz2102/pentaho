@@ -5,6 +5,9 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
   <!-- <ion-slide ng-repeat="image in images"> -->
 <ion-card *ngFor = "let noticia of articulos">
@@ -27,7 +30,7 @@
     <ion-col text-right>
       <button ion-button clear small color="danger" icon-start>
         <ion-icon name='share-alt'></ion-icon>
-       <a href="whatsapp://send?text={{noticia.url}}">Compartir en Whatsapp</a>
+       <!-- <a href="whatsapp://send?text={{noticia.url}}">Compartir en Whatsapp</a> -->
       </button>
     </ion-col>
   </ion-row>
