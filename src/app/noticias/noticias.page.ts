@@ -9,14 +9,14 @@ import { NoticiasService  } from "../servicios/noticias.service";
 
 export class NoticiasPage implements OnInit {
   
-  articulos:any[];
+  articulos:NoticiasService[];
   constructor(public noticias: NoticiasService) { }
 
   doRefresh(refresher) {
     let rrff = refresher;
     console.log('Begin async operation', rrff);
     this.noticias.getNews().subscribe((res) => {
-      //this.presentarNoticias(res)
+      this.presentarNoticias(res)
       rrff.detail.complete();
     });
     //this.cargarNoticias();
