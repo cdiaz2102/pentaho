@@ -6,13 +6,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NoticiasService {
 
-  COL_News = "https://newsapi.org/v2/top-headlines?country=co&language=es&apiKey=890ed3b022e44dedaae9d79d12a03426";
+  CO_News = "https://newsapi.org/v2/top-headlines?country=co&language=es&apiKey=890ed3b022e44dedaae9d79d12a03426";
   US_News = "https://newsapi.org/v2/top-headlines?country=us&language=es&apiKey=890ed3b022e44dedaae9d79d12a03426";
 
   constructor(public http: HttpClient) {
   }
 
   getNews() {
-    return this.http.get(this.US_News);
+    return this.http.get(this.CO_News);
   }
 }
