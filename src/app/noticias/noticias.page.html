@@ -22,15 +22,17 @@
   </ion-card-content>
   <ion-row no-padding>
     <ion-col>
-      <button ion-button clear small color="danger" icon-start>
-        <ion-icon name='star'></ion-icon>
+      <button ion-button clear small color="danger" icon-start (click)="guardarFavoritos(noticia)">
+        <ion-icon name='star'  ></ion-icon>
         Favorito
       </button>
     </ion-col>
     <ion-col text-right>
       <button ion-button clear small color="danger" icon-start>
-        <ion-icon name='share-alt'></ion-icon>
-       <!-- <a href="whatsapp://send?text={{noticia.url}}">Compartir en Whatsapp</a> -->
+        
+
+       <a href="{{noticia.url}}"><ion-icon name='share-alt'></ion-icon></a>[+]
+
       </button>
     </ion-col>
   </ion-row>

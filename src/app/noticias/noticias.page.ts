@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NoticiasService  } from "../servicios/noticias.service";
-//import { PhonegapLocalNotification, LocalNotificationOptions } from "@ionic-native/phonegap-local-notification";
-
-
+import { FavoritosService } from "../servicios/favoritos.service";
 @Component({
   selector: 'app-noticias',
   templateUrl: './noticias.page.html',
@@ -12,7 +10,7 @@ import { NoticiasService  } from "../servicios/noticias.service";
 export class NoticiasPage implements OnInit {
   
   articulos:NoticiasService[];
-  constructor(public noticias: NoticiasService, ) { }
+  constructor(public noticias: NoticiasService, public favoritosService: FavoritosService ) { }
 
   doRefresh(refresher) {
     let rrff = refresher;
@@ -44,22 +42,9 @@ export class NoticiasPage implements OnInit {
     console.log(this.articulos);
   }
 
-  
-
-  notificarRefresco(){
-    // if ("Notification" in window) {
-    //   Notification.requestPermission(function (permission) {
-    //     // If the user accepts, let’s create a notification
-    //     if (permission === 'granted') {
-    //       var notificacion = new Notification ("My title", {
-    //           tag: "Acción", 
-    //           body: "Refrescado" 
-    //       }); 
-    //       notificacion.onshow  = function() { console.log('show'); };
-    //       notificacion.onclose = function() { console.log('close'); };
-    //       notificacion.onclick = function() { console.log('click'); };
-    //     }
-    //   });
-    // }
+  guardarFavoritos(elem){
+    console.log("guardar favorito:" + elem);
+    this.favoritosService.guadarFavorito(elem);
   }
+
 }
