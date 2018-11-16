@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NoticiasService  } from "../servicios/noticias.service";
+//import { PhonegapLocalNotification, LocalNotificationOptions } from "@ionic-native/phonegap-local-notification";
+
 
 @Component({
   selector: 'app-noticias',
@@ -10,7 +12,7 @@ import { NoticiasService  } from "../servicios/noticias.service";
 export class NoticiasPage implements OnInit {
   
   articulos:NoticiasService[];
-  constructor(public noticias: NoticiasService) { }
+  constructor(public noticias: NoticiasService, ) { }
 
   doRefresh(refresher) {
     let rrff = refresher;
@@ -18,6 +20,7 @@ export class NoticiasPage implements OnInit {
     this.noticias.getNews().subscribe((res) => {
       this.presentarNoticias(res)
       rrff.detail.complete();
+      //this.notificarRefresco()
     });
     //this.cargarNoticias();
     
@@ -42,4 +45,21 @@ export class NoticiasPage implements OnInit {
   }
 
   
+
+  notificarRefresco(){
+    // if ("Notification" in window) {
+    //   Notification.requestPermission(function (permission) {
+    //     // If the user accepts, let’s create a notification
+    //     if (permission === 'granted') {
+    //       var notificacion = new Notification ("My title", {
+    //           tag: "Acción", 
+    //           body: "Refrescado" 
+    //       }); 
+    //       notificacion.onshow  = function() { console.log('show'); };
+    //       notificacion.onclose = function() { console.log('close'); };
+    //       notificacion.onclick = function() { console.log('click'); };
+    //     }
+    //   });
+    // }
+  }
 }

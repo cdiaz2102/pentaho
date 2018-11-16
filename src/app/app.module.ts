@@ -16,6 +16,7 @@ import { NoticiasService } from './servicios/noticias.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HttpModule } from "@angular/http";
 import { NotificacionService } from './servicios/notificacion.service';
+//import { PhonegapLocalNotification } from "@ionic-native/phonegap-local-notification";
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,7 +34,7 @@ import { NotificacionService } from './servicios/notificacion.service';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    AuthService, NoticiasService, HttpClient, NotificacionService
+    AuthService, NoticiasService, HttpClient, NotificacionService, //PhonegapLocalNotification
   ],
   bootstrap: [AppComponent]
 })

@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import * as firebase from 'firebase/app';
 import "rxjs/add/operator/map";
 @Injectable()
 export class AuthService {
 
   constructor(
+    public http: HttpClient,
     public afAuth: AngularFireAuth
   ) { }
 
@@ -37,4 +40,20 @@ export class AuthService {
     return this.afAuth.auth.signOut();
   }
 
+  getUsuarios() {
+    return this.http.get('https://miapirails.herokuapp.com/users');
+  }
+
+
+  loguearseJwt(email, password) {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    let bodies = { "auth": { "email": email, "password": password } }
+    let options = { headers: headers };
+    let laUrl = 'https://miapirails.herokuapp.com/user_token';
+
+    console.log("loguearseJwt");
+    return this.http.post(laUrl, bodies, options);
+  }
 }

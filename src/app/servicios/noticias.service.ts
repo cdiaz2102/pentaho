@@ -13,6 +13,6 @@ export class NoticiasService {
   }
 
   getNews() {
-    return this.http.get(this.COL_News);
+    return this.http.get(this.US_News);
   }
 }
