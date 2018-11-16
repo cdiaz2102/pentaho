@@ -9,7 +9,7 @@ export class FavoritosService {
   constructor() { 
   	if(this.favoritos == undefined){
   		this.favoritos=[];
-  		this.consultarFavoritos();
+  		//this.consultarFavoritos();
   	}
   }
 
