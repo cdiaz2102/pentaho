@@ -15,6 +15,7 @@ import { environment } from '../environments/environment';
 import { NoticiasService } from './servicios/noticias.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HttpModule } from "@angular/http";
+import { FavoritosService } from './servicios/favoritos.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,7 +33,7 @@ import { HttpModule } from "@angular/http";
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    AuthService, NoticiasService, HttpClient
+    AuthService, NoticiasService, HttpClient,FavoritosService
   ],
   bootstrap: [AppComponent]
 })
