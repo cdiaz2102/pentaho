@@ -24,14 +24,15 @@ export class MenuPage implements OnInit {
 
   ]
 
-  constructor(private  router: Router) { 
+  constructor(private router: Router, ) { 
     this.router.events.subscribe((event: RouterEvent) => {
       this.selectedPath = event.url;
     })
   }
 
   hacerllamada(){
-    alert("ddddd")
+    this.callNumber.callNumber("18001010101", true).then(res => console.log('Launched dialer!', res)).catch(err => console.log('Error launching dialer', err));
+
   }
   ngOnInit() {
   }
