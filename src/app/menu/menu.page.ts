@@ -14,7 +14,7 @@ export class MenuPage implements OnInit {
   pages = [
 
     {
-      title: 'Noticias',
+      title: 'Sitios',
       url: '/menu/(menucontent:noticias)'
     },
     {
