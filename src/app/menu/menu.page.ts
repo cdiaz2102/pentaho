@@ -30,10 +30,10 @@ export class MenuPage implements OnInit {
     })
   }
 
-  hacerllamada(){
-    this.callNumber.callNumber("3138408816", true).then(res => console.log('Launched dialer!', res)).catch(err => console.log('Error launching dialer', err));
+  // hacerllamada(){
+  //   this.callNumber.callNumber("3138408816", true).then(res => console.log('Launched dialer!', res)).catch(err => console.log('Error launching dialer', err));
 
-  }
+  // }
   ngOnInit() {
   }
 

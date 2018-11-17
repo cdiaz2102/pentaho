@@ -37,7 +37,7 @@ import { FavoritosService } from './servicios/favoritos.service';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    AuthService, NoticiasService, HttpClient,FavoritosService
+    AuthService, NoticiasService, HttpClient,FavoritosService,
   ],
   bootstrap: [AppComponent]
 })
